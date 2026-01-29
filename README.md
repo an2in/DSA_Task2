@@ -4,7 +4,7 @@ graph TD
     A -->|Invokes| C[benchmark_lib.py]
     C -->|Imports| D[sorting_algorithms.py]
     C -->|Measures| E[NumPy Library]
-    B -->|Reads/Writes| F[Unsorted_Data_compressed.zip]
+    B -->|Writes| F[Unsorted_Data_compressed.zip]
     A -->|Exports| G[Benchmark.csv]
 
 ```
