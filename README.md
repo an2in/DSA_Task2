@@ -19,12 +19,6 @@ graph TD
     Bench -.->|Reads| Data
     
     Main -->|3. Exports results| Out
-
-    %% Styling for better visibility (Optional)
-    style Main fill:#f9f,stroke:#333,stroke-width:2px
-    style Out fill:#9f9,stroke:#333,stroke-width:2px
-    style Data fill:#ff9,stroke:#333,stroke-width:2px
-
 ```
 
 ## Project Overview
