@@ -1,11 +1,29 @@
 ```mermaid
 graph TD
-    A[main.py] -->|Calls| B[data_generator.py]
-    A -->|Invokes| C[benchmark_lib.py]
-    C -->|Imports| D[sorting_algorithms.py]
-    C -->|Measures| E[NumPy Library]
-    B -->|Writes| F[Unsorted_Data_compressed.zip]
-    A -->|Exports| G[Benchmark.csv]
+    %% Nodes
+    Main[main.py]
+    Gen[data_generator.py]
+    Data[Unsorted_Data.txt]
+    Bench[benchmark_lib.py]
+    Algos[sorting_algorithms.py]
+    Out[Benchmark.csv]
+
+    %% Flow connections
+    Main -->|1. Calls| Gen
+    Gen -->|Writes| Data
+    
+    Main -->|2. Invokes| Bench
+    Bench -->|Imports & Runs| Algos
+    
+    %% Optional: Show that benchmark uses the data (implicit or explicit)
+    Bench -.->|Reads| Data
+    
+    Main -->|3. Exports results| Out
+
+    %% Styling for better visibility (Optional)
+    style Main fill:#f9f,stroke:#333,stroke-width:2px
+    style Out fill:#9f9,stroke:#333,stroke-width:2px
+    style Data fill:#ff9,stroke:#333,stroke-width:2px
 
 ```
 
