@@ -1,23 +1,19 @@
 ```mermaid
 graph TD
-    %% Define Nodes
     Main[main.py]
     DataGen[data_generator.py]
     BenchLib[benchmark_lib.py]
     Algos[sorting_algorithms.py]
     
-    %% Storage Nodes
     RawData[(Unsorted_Data.txt)]
     Output[Benchmark.csv]
 
-    %% Flow Connections
     Main -->|1. Triggers Generation| DataGen
     DataGen -->|2. Writes| RawData
     
     Main -->|3. Initiates Benchmark| BenchLib
     BenchLib -->|4. Invokes| Algos
     
-    %% CORRECTED FLOW: Data moves FROM file TO algorithm
     RawData -.->|5. Input Data| Algos
     
     Main -->|6. Exports Results| Output
